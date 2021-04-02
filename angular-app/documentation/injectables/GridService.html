@@ -1,0 +1,1597 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>angular-app documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	      <link rel="stylesheet" href="../styles/style.css">
+    </head>
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top visible-xs">
+            <a href="../" class="navbar-brand">angular-app documentation</a>
+            <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="hidden-xs menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content injectable">
+                   <div class="content-data">
+
+
+
+
+
+
+
+<ol class="breadcrumb">
+  <li>Injectables</li>
+  <li>GridService</li>
+</ol>
+
+<ul class="nav nav-tabs" role="tablist">
+        <li class="active">
+            <a href="#info" role="tab" id="info-tab" data-toggle="tab" data-link="info">Info</a>
+        </li>
+        <li >
+            <a href="#source" role="tab" id="source-tab" data-toggle="tab" data-link="source">Source</a>
+        </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="c-info">
+        <p class="comment">
+            <h3>File</h3>
+        </p>
+        <p class="comment">
+            <code>src/app/grid.service.ts</code>
+        </p>
+
+            <p class="comment">
+                <h3>Description</h3>
+            </p>
+            <p class="comment">
+                <p>Grid Injectible</p>
+
+            </p>
+
+
+
+            <section>
+    <h3 id="index">Index</h3>
+    <table class="table table-sm table-bordered index-table">
+        <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Properties</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#grid">grid</a>
+                            </li>
+                            <li>
+                                <a href="#height">height</a>
+                            </li>
+                            <li>
+                                <a href="#mines">mines</a>
+                            </li>
+                            <li>
+                                <a href="#width">width</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Methods</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#coordInCoordArray">coordInCoordArray</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#getAdjacentSquares">getAdjacentSquares</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#getSurroundingSquares">getSurroundingSquares</a>
+                            </li>
+                            <li>
+                                <a href="#getValue">getValue</a>
+                            </li>
+                            <li>
+                                <a href="#getZeroGroup">getZeroGroup</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#incrementSurroundingSquares">incrementSurroundingSquares</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#initializeGridWithZeros">initializeGridWithZeros</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#insertMines">insertMines</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#isMine">isMine</a>
+                            </li>
+                            <li>
+                                <a href="#resetGrid">resetGrid</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#setMine">setMine</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#squareIsZero">squareIsZero</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+            <section>
+    <h3 id="constructor">Constructor</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+<code>constructor(settings: <a href="../injectables/SettingsService.html">SettingsService</a>)</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="31" class="link-to-prism">src/app/grid.service.ts:31</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                            <div class="io-description"><p>Initializes the game grid as well as its number of mines, height, and width.</p>
+</div>
+                            <div>
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                                    <td>Description</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>settings</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/SettingsService.html" target="_self" >SettingsService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                        <td>
+                                                                <code><p>The settings from the difficulty module which include the difficulty the player selected.</p>
+</code>
+                                                        </td>
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+</section>
+
+            <section>
+    
+    <h3 id="methods">
+        Methods
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="coordInCoordArray"></a>
+                    <span class="name">
+                        <b>
+                            <span class="modifier">Private</span>
+                            coordInCoordArray
+                        </b>
+                        <a href="#coordInCoordArray"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>coordInCoordArray(coord: <a href="../undefineds/Coord.html">Coord</a>, coordArray: <a href="../undefineds/Coord.html">Coord[]</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="183"
+                            class="link-to-prism">src/app/grid.service.ts:183</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>A function to return a specific coordinate in the entire coordinate array.</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                    <td>Description</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>coord</td>
+                                    <td>
+                                                <code><a href="../miscellaneous/typealiases.html#Coord" target="_self" >Coord</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                    <td>
+                                        <p>The specified coordinate that is being searched for.</p>
+
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>coordArray</td>
+                                    <td>
+                                                <code><a href="../miscellaneous/typealiases.html#Coord" target="_self" >Coord[]</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                    <td>
+                                        <p>The coordinate array that is being searched for the specific coordinate.</p>
+
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        <p>True if the coordinate is in the coordinate array, false otherwise.</p>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getAdjacentSquares"></a>
+                    <span class="name">
+                        <b>
+                            <span class="modifier">Private</span>
+                            getAdjacentSquares
+                        </b>
+                        <a href="#getAdjacentSquares"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>getAdjacentSquares(square: <a href="../undefineds/Coord.html">Coord</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="156"
+                            class="link-to-prism">src/app/grid.service.ts:156</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>A function to get the adjacent tiles to a designated tile.</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                    <td>Description</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>square</td>
+                                    <td>
+                                                <code><a href="../miscellaneous/typealiases.html#Coord" target="_self" >Coord</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                    <td>
+                                        <p>The designated tile to get the adjacent tiles of.</p>
+
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="../miscellaneous/typealiases.html#Coord" target="_self" >Coord[]</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        <p>A Coord array of the adjacent tiles to a specified tile.</p>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getSurroundingSquares"></a>
+                    <span class="name">
+                        <b>
+                            <span class="modifier">Private</span>
+                            getSurroundingSquares
+                        </b>
+                        <a href="#getSurroundingSquares"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>getSurroundingSquares(square: <a href="../undefineds/Coord.html">Coord</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="130"
+                            class="link-to-prism">src/app/grid.service.ts:130</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>A function to get the surrounding tiles&#39; data.</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                    <td>Description</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>square</td>
+                                    <td>
+                                                <code><a href="../miscellaneous/typealiases.html#Coord" target="_self" >Coord</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                    <td>
+                                        <p>The designated coordinates to get the surrounding tiles of.</p>
+
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>    <code>{}</code>
+
+                    </div>
+                    <div class="io-description">
+                        <p>The adjacent tiles of the specified tile.</p>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getValue"></a>
+                    <span class="name">
+                        <b>
+                            getValue
+                        </b>
+                        <a href="#getValue"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>getValue(row: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>, col: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="233"
+                            class="link-to-prism">src/app/grid.service.ts:233</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>A function to return the specified tile based on the row or column specified.</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                    <td>Description</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>row</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                    <td>
+                                        <p>The row the tile is located in.</p>
+
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>col</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                    <td>
+                                        <p>The column the tile is located in.</p>
+
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        <p>The status of the specified tile (whether it contains a mine, is numbered, or unnumbered)</p>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getZeroGroup"></a>
+                    <span class="name">
+                        <b>
+                            getZeroGroup
+                        </b>
+                        <a href="#getZeroGroup"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>getZeroGroup(square: <a href="../undefineds/Coord.html">Coord</a>, zeroGroup?: <a href="../undefineds/Coord.html">Coord[]</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="207"
+                            class="link-to-prism">src/app/grid.service.ts:207</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>A function to uncover any adjacent tiles that do not have any adjacent mines (otherwise contain no number).</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                    <td>Description</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>square</td>
+                                    <td>
+                                                <code><a href="../miscellaneous/typealiases.html#Coord" target="_self" >Coord</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                    <td>
+                                        <p>The tile that has been selected that has no adjacent mines surrounding it</p>
+
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>zeroGroup</td>
+                                    <td>
+                                                <code><a href="../miscellaneous/typealiases.html#Coord" target="_self" >Coord[]</a></code>
+                                    </td>
+
+                                    <td>
+                                        Yes
+                                    </td>
+
+
+                                    <td>
+                                        <p>The group of adjacent tiles that do not have any adjacent mines.</p>
+
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="../miscellaneous/typealiases.html#Coord" target="_self" >Coord[]</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        <p>The full group of adjacent tiles that do not have any adjacent mines.</p>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="incrementSurroundingSquares"></a>
+                    <span class="name">
+                        <b>
+                            <span class="modifier">Private</span>
+                            incrementSurroundingSquares
+                        </b>
+                        <a href="#incrementSurroundingSquares"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>incrementSurroundingSquares(square: <a href="../undefineds/Coord.html">Coord</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="116"
+                            class="link-to-prism">src/app/grid.service.ts:116</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>A function to modify tiles that are surrounded by a mine with the appropriate number of adjacent mines.</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                    <td>Description</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>square</td>
+                                    <td>
+                                                <code><a href="../miscellaneous/typealiases.html#Coord" target="_self" >Coord</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                    <td>
+                                        <p>The tiles that are surrounding a mine tile.</p>
+
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="initializeGridWithZeros"></a>
+                    <span class="name">
+                        <b>
+                            <span class="modifier">Private</span>
+                            initializeGridWithZeros
+                        </b>
+                        <a href="#initializeGridWithZeros"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>initializeGridWithZeros()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="62"
+                            class="link-to-prism">src/app/grid.service.ts:62</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>A function that initializes the game grid with zeros that will be modified with the insertion of 
+mines and their adjacent numbered tiles.</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="insertMines"></a>
+                    <span class="name">
+                        <b>
+                            <span class="modifier">Private</span>
+                            insertMines
+                        </b>
+                        <a href="#insertMines"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>insertMines(numMines: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="77"
+                            class="link-to-prism">src/app/grid.service.ts:77</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>A function to populate the game grid with mines depending on the difficulty selected by the player.</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                    <td>Description</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>numMines</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                    <td>
+                                        <p>The number of mines to place on the game grid based on the difficulty.</p>
+
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="isMine"></a>
+                    <span class="name">
+                        <b>
+                            <span class="modifier">Private</span>
+                            isMine
+                        </b>
+                        <a href="#isMine"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>isMine(square: <a href="../undefineds/Coord.html">Coord</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="99"
+                            class="link-to-prism">src/app/grid.service.ts:99</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>A function to determine if the selected tile is a mine.</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                    <td>Description</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>square</td>
+                                    <td>
+                                                <code><a href="../miscellaneous/typealiases.html#Coord" target="_self" >Coord</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                    <td>
+                                        <p>The selected tile&#39;s coordinates on the game grid.</p>
+
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        <p>True if the selected tile is a mine, false otherwise.</p>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="resetGrid"></a>
+                    <span class="name">
+                        <b>
+                            resetGrid
+                        </b>
+                        <a href="#resetGrid"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>resetGrid()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="49"
+                            class="link-to-prism">src/app/grid.service.ts:49</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>A function that resets to an empty game grid with the designated height and width from the difficulty.</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="setMine"></a>
+                    <span class="name">
+                        <b>
+                            <span class="modifier">Private</span>
+                            setMine
+                        </b>
+                        <a href="#setMine"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>setMine(square: <a href="../undefineds/Coord.html">Coord</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="107"
+                            class="link-to-prism">src/app/grid.service.ts:107</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>A function to set a random tile as a mine when the game board is generated.</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                    <td>Description</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>square</td>
+                                    <td>
+                                                <code><a href="../miscellaneous/typealiases.html#Coord" target="_self" >Coord</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                    <td>
+                                        <p>The designated tile coordinates where the mine will be placed.</p>
+
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="squareIsZero"></a>
+                    <span class="name">
+                        <b>
+                            <span class="modifier">Private</span>
+                            squareIsZero
+                        </b>
+                        <a href="#squareIsZero"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>squareIsZero(square: <a href="../undefineds/Coord.html">Coord</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="197"
+                            class="link-to-prism">src/app/grid.service.ts:197</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>A function to determine if the selected tile has any adjacent mines or not.</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                    <td>Description</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>square</td>
+                                    <td>
+                                                <code><a href="../miscellaneous/typealiases.html#Coord" target="_self" >Coord</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                    <td>
+                                        <p>The designated tile&#39;s coordinates to check for no adjacent mines.</p>
+
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        <p>True if there are no adjacent mines, false otherwise.</p>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+            <section>
+    
+        <h3 id="inputs">
+            Properties
+        </h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="grid"></a>
+                        <span class="name">
+                            <b>
+                            grid</b>
+                            <a href="#grid"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>    <code>number[][]</code>
+
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="19" class="link-to-prism">src/app/grid.service.ts:19</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description"><p>A state variable for the game grid.</p>
+</div>
+                    </td>
+                </tr>
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="height"></a>
+                        <span class="name">
+                            <b>
+                            height</b>
+                            <a href="#height"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="23" class="link-to-prism">src/app/grid.service.ts:23</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description"><p>A state variable to keep track of the current height of the game grid.</p>
+</div>
+                    </td>
+                </tr>
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="mines"></a>
+                        <span class="name">
+                            <b>
+                            mines</b>
+                            <a href="#mines"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>        <code><a href="../miscellaneous/typealiases.html#Coord" target="_self" >Coord[]</a></code>
+
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="31" class="link-to-prism">src/app/grid.service.ts:31</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description"><p>A state variable to track where the mines on the current game grid are.</p>
+</div>
+                    </td>
+                </tr>
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="width"></a>
+                        <span class="name">
+                            <b>
+                            width</b>
+                            <a href="#width"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="27" class="link-to-prism">src/app/grid.service.ts:27</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description"><p>A state variable to keep track of the current width of the game grid.</p>
+</div>
+                    </td>
+                </tr>
+
+            </tbody>
+        </table>
+</section>
+
+    </div>
+
+
+    <div class="tab-pane fade  tab-source-code" id="c-source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Injectable } from &#x27;@angular/core&#x27;;
+import { SettingsService } from &#x27;./settings.service&#x27;;
+import { Coord } from &#x27;./types/coord&#x27;;
+
+/**
+ * Grid Injectible
+ */
+@Injectable({
+  providedIn: &#x27;root&#x27;
+})
+
+/**
+ * The class for the game grid module.
+ */
+export class GridService {
+  /**
+   * A state variable for the game grid.
+   */
+  grid: number[][];
+  /**
+   * A state variable to keep track of the current height of the game grid.
+   */
+  height: number;
+  /**
+   * A state variable to keep track of the current width of the game grid.
+   */
+  width: number;
+  /**
+   * A state variable to track where the mines on the current game grid are.
+   */
+  mines: Coord[];
+
+  /**
+   * Initializes the game grid as well as its number of mines, height, and width.
+   * @param settings The settings from the difficulty module which include the difficulty the player selected.
+   */
+  constructor(private settings: SettingsService) {
+    this.height &#x3D; settings.numRows;
+    this.width &#x3D; settings.numCols;
+    this.mines &#x3D; [];
+    this.grid &#x3D; [];
+    this.initializeGridWithZeros();
+    this.insertMines(settings.numMines);
+  }
+
+  /**
+   * A function that resets to an empty game grid with the designated height and width from the difficulty.
+   */
+  resetGrid() {
+    this.height &#x3D; this.settings.numRows;
+    this.width &#x3D; this.settings.numCols;
+    this.mines &#x3D; [];
+    this.grid &#x3D; [];
+    this.initializeGridWithZeros();
+    this.insertMines(this.settings.numMines);
+  }
+
+  /**
+   * A function that initializes the game grid with zeros that will be modified with the insertion of 
+   * mines and their adjacent numbered tiles.
+   */
+  private initializeGridWithZeros() {
+    this.grid &#x3D; [];
+    for (let i &#x3D; 0; i &lt; this.height; i++) {
+      let row &#x3D; [];
+      for (let j &#x3D; 0; j &lt; this.width; j++) {
+        row.push(0);
+      }
+      this.grid.push(row);
+    }
+  }
+
+  /**
+   * A function to populate the game grid with mines depending on the difficulty selected by the player.
+   * @param numMines The number of mines to place on the game grid based on the difficulty.
+   */
+  private insertMines(numMines: number) {
+    let availableSquares: Coord[] &#x3D; [];
+    for (let row &#x3D; 0; row &lt; this.height; row++) {
+      for (let col &#x3D; 0; col &lt; this.width; col++) {
+        if (!this.isMine({row: row, col: col})) {
+          availableSquares.push({row: row, col: col});
+        }
+      }
+    }
+    for (let i &#x3D; 0; i &lt; numMines; i++) {
+      let randomSquareIndex &#x3D; Math.floor(Math.random() * availableSquares.length);
+      let randomSquare &#x3D; availableSquares[randomSquareIndex];
+      this.setMine(randomSquare);
+      availableSquares.splice(randomSquareIndex, 1);
+    }
+  }
+
+  /**
+   * A function to determine if the selected tile is a mine.
+   * @param square The selected tile&#x27;s coordinates on the game grid.
+   * @returns True if the selected tile is a mine, false otherwise.
+   */
+  private isMine(square: Coord) {
+    return this.grid[square.row][square.col] &#x3D;&#x3D;&#x3D; -1;
+  }
+
+  /**
+   * A function to set a random tile as a mine when the game board is generated.
+   * @param square The designated tile coordinates where the mine will be placed.
+   */
+  private setMine(square: Coord) {
+    this.grid[square.row][square.col] &#x3D; -1;
+    this.incrementSurroundingSquares(square);
+  }
+
+  /**
+   * A function to modify tiles that are surrounded by a mine with the appropriate number of adjacent mines.
+   * @param square The tiles that are surrounding a mine tile.
+   */
+  private incrementSurroundingSquares(square: Coord) {
+    let surroundingSquares: Coord[] &#x3D; this.getSurroundingSquares(square);
+    for (let surroundingSquare of surroundingSquares) {
+      if (!this.isMine(surroundingSquare)) {
+        this.grid[surroundingSquare.row][surroundingSquare.col]++;
+      }
+    }
+  }
+
+  /**
+   * A function to get the surrounding tiles&#x27; data.
+   * @param square The designated coordinates to get the surrounding tiles of.
+   * @returns The adjacent tiles of the specified tile.
+   */
+  private getSurroundingSquares(square: Coord) {
+    let surroundingSquares: Coord[] &#x3D; this.getAdjacentSquares(square);
+    // Top-left
+    if (square.row &gt; 0 &amp;&amp; square.col &gt; 0) {
+      surroundingSquares.push({row: square.row-1, col: square.col-1});
+    }
+    // Top-right
+    if (square.row &gt; 0 &amp;&amp; square.col &lt; this.width-1) {
+      surroundingSquares.push({row: square.row-1, col: square.col+1});
+    }
+    // Bottom-right
+    if (square.row &lt; this.height-1 &amp;&amp; square.col &lt; this.width-1) {
+      surroundingSquares.push({row: square.row+1, col: square.col+1});
+    }
+    // Bottom-left
+    if (square.row &lt; this.height-1 &amp;&amp; square.col &gt; 0) {
+      surroundingSquares.push({row: square.row+1, col: square.col-1});
+    }
+    return surroundingSquares;
+  }
+
+  /**
+   * A function to get the adjacent tiles to a designated tile.
+   * @param square The designated tile to get the adjacent tiles of.
+   * @returns A Coord array of the adjacent tiles to a specified tile.
+   */
+  private getAdjacentSquares(square: Coord): Coord[] {
+    let adjacentSquares: Coord[] &#x3D; [];
+    // Top
+    if (square.row &gt; 0) {
+      adjacentSquares.push({row: square.row-1, col: square.col});
+    }
+    // Right
+    if (square.col &lt; this.width-1) {
+      adjacentSquares.push({row: square.row, col: square.col+1});
+    }
+    // Bottom
+    if (square.row &lt; this.height-1) {
+      adjacentSquares.push({row: square.row+1, col: square.col});
+    }
+    // Left
+    if (square.col &gt; 0) {
+      adjacentSquares.push({row: square.row, col: square.col-1});
+    }
+    return adjacentSquares;
+  }
+
+  /**
+   * A function to return a specific coordinate in the entire coordinate array.
+   * @param coord The specified coordinate that is being searched for.
+   * @param coordArray The coordinate array that is being searched for the specific coordinate.
+   * @returns True if the coordinate is in the coordinate array, false otherwise.
+   */
+  private coordInCoordArray(coord: Coord, coordArray: Coord[]): boolean {
+    for (let arrayElem of coordArray) {
+      if (arrayElem.row &#x3D;&#x3D;&#x3D; coord.row &amp;&amp; arrayElem.col &#x3D;&#x3D;&#x3D; coord.col) {
+        return true;
+      }
+    }
+    return false;
+  }
+
+  /**
+   * A function to determine if the selected tile has any adjacent mines or not.
+   * @param square The designated tile&#x27;s coordinates to check for no adjacent mines.
+   * @returns True if there are no adjacent mines, false otherwise.
+   */
+  private squareIsZero(square: Coord): boolean {
+    return this.grid[square.row][square.col] &#x3D;&#x3D;&#x3D; 0;
+  }
+
+  /**
+   * A function to uncover any adjacent tiles that do not have any adjacent mines (otherwise contain no number).
+   * @param square The tile that has been selected that has no adjacent mines surrounding it
+   * @param zeroGroup The group of adjacent tiles that do not have any adjacent mines.
+   * @returns The full group of adjacent tiles that do not have any adjacent mines.
+   */
+  getZeroGroup(square: Coord, zeroGroup?: Coord[]): Coord[] {
+    zeroGroup &#x3D; zeroGroup || [];
+    if (this.grid[square.row][square.col] !&#x3D;&#x3D; 0) {
+      return zeroGroup;
+    }
+    zeroGroup.push(square);
+    let surroundingSquares: Coord[] &#x3D; this.getSurroundingSquares(square);
+    for (let surroundingSquare of surroundingSquares) {
+      if (!this.coordInCoordArray(surroundingSquare, zeroGroup)) {
+        if (this.squareIsZero(surroundingSquare)) {
+          zeroGroup &#x3D; this.getZeroGroup(surroundingSquare, zeroGroup);
+        }
+        else {
+          zeroGroup.push(surroundingSquare);
+        }
+      }
+    }
+    return zeroGroup;
+  }
+
+  /**
+   * A function to return the specified tile based on the row or column specified.
+   * @param row The row the tile is located in.
+   * @param col The column the tile is located in.
+   * @returns The status of the specified tile (whether it contains a mine, is numbered, or unnumbered)
+   */
+  getValue(row: number, col: number) {
+    return this.grid[row][col];
+  }
+}
+</code></pre>
+    </div>
+
+</div>
+
+
+
+
+
+
+
+                   
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> result-matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'injectable';
+            var COMPODOC_CURRENT_PAGE_URL = 'GridService.html';
+            var MAX_SEARCH_RESULTS = 15;
+       </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+       <!-- Required to polyfill modern browsers as code is ES5 for IE... -->
+       <script src="../js/libs/custom-elements-es5-adapter.js" charset="utf-8" defer></script>
+       <script src="../js/menu-wc.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+       <script src="../js/libs/zepto.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>

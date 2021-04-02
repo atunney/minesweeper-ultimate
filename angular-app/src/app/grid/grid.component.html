@@ -1,0 +1,4 @@
+<div *ngFor="let square of squares" class="square"
+    [ngClass]="square.hidden ? (square.flagged ? 'hidden flagged' : 'hidden') : (gameOver ? (square.val === -1 ? 'unhidden bomb-uncovered' : 'unhidden') : 'unhidden')"
+    [ngStyle]="{'color': (square.val === 1) ? 'blue' : (square.val === 2) ? 'green' : (square.val === 3) ? 'red' : (square.val === 4) ? 'yellow' : ''}"
+    (mousedown)="onMouseDown($event, square)" (contextmenu)="onContextMenu()" [innerHTML]="square.html"></div>

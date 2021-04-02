@@ -1,0 +1,1414 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>angular-app documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	      <link rel="stylesheet" href="../styles/style.css">
+    </head>
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top visible-xs">
+            <a href="../" class="navbar-brand">angular-app documentation</a>
+            <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="hidden-xs menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content component">
+                   <div class="content-data">
+
+
+
+
+<ol class="breadcrumb">
+  <li>Components</li>
+  <li>GridComponent</li>
+</ol>
+
+<ul class="nav nav-tabs" role="tablist">
+        <li class="active">
+            <a href="#info" role="tab" id="info-tab" data-toggle="tab" data-link="info">Info</a>
+        </li>
+        <li >
+            <a href="#source" role="tab" id="source-tab" data-toggle="tab" data-link="source">Source</a>
+        </li>
+        <li >
+            <a href="#templateData" role="tab" id="templateData-tab" data-toggle="tab" data-link="template">Template</a>
+        </li>
+        <li >
+            <a href="#styleData" role="tab" id="styleData-tab" data-toggle="tab" data-link="style">Styles</a>
+        </li>
+        <li >
+            <a href="#tree" role="tab" id="tree-tab" data-toggle="tab" data-link="dom-tree">DOM Tree</a>
+        </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="c-info"><p class="comment">
+    <h3>File</h3>
+</p>
+<p class="comment">
+    <code>src/app/grid/grid.component.ts</code>
+</p>
+
+    <p class="comment">
+        <h3>Description</h3>
+    </p>
+    <p class="comment">
+        <p>The Component for displaying the game grid module logic to the screen.</p>
+
+    </p>
+
+
+    <p class="comment">
+        <h3>Implements</h3>
+    </p>
+    <p class="comment">
+                    <code><a href="https://angular.io/api/core/OnInit" target="_blank" >OnInit</a></code>
+    </p>
+
+
+<section>
+    <h3>Metadata</h3>
+    <table class="table table-sm table-hover">
+        <tbody>
+
+
+
+
+
+
+
+
+
+
+
+            <tr>
+                <td class="col-md-3">selector</td>
+                <td class="col-md-9"><code>app-grid</code></td>
+            </tr>
+
+            <tr>
+                <td class="col-md-3">styleUrls</td>
+                <td class="col-md-9"><code>./grid.component.css</code></td>
+            </tr>
+
+
+
+            <tr>
+                <td class="col-md-3">templateUrl</td>
+                <td class="col-md-9"><code>./grid.component.html</code></td>
+            </tr>
+
+
+
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section>
+    <h3 id="index">Index</h3>
+    <table class="table table-sm table-bordered index-table">
+        <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Properties</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#gameOver">gameOver</a>
+                            </li>
+                            <li>
+                                <a href="#gridString">gridString</a>
+                            </li>
+                            <li>
+                                <a href="#squares">squares</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Methods</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#getSquareWithCoord">getSquareWithCoord</a>
+                            </li>
+                            <li>
+                                <a href="#ngOnInit">ngOnInit</a>
+                            </li>
+                            <li>
+                                <a href="#onMouseDown">onMouseDown</a>
+                            </li>
+                            <li>
+                                <a href="#startNewGame">startNewGame</a>
+                            </li>
+                            <li>
+                                <a href="#unhide">unhide</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Inputs</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#newGame">newGame</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Outputs</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#gameOverTriggered">gameOverTriggered</a>
+                            </li>
+                            <li>
+                                <a href="#newGameRenderFinished">newGameRenderFinished</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>HostBindings</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#style.height">style.height</a>
+                            </li>
+                            <li>
+                                <a href="#style.width">style.width</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <h6><b>Accessors</b></h6>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <ul class="index-list">
+                                <li>
+                                    <a href="#newGame">newGame</a>
+                                </li>
+                            </ul>
+                        </td>
+                    </tr>
+        </tbody>
+    </table>
+</section>
+
+    <section>
+    <h3 id="constructor">Constructor</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+<code>constructor(grid: <a href="../injectables/GridService.html">GridService</a>, settings: <a href="../injectables/SettingsService.html">SettingsService</a>, logger: <a href="../injectables/LoggerService.html">LoggerService</a>)</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="108" class="link-to-prism">src/app/grid/grid.component.ts:108</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                            <div class="io-description"><p>Initializes the grid string to an empty string and the squares of the game grid to an empty array.</p>
+</div>
+                            <div>
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                                    <td>Description</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>grid</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/GridService.html" target="_self" >GridService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                        <td>
+                                                                <code><p>The game grid module details.</p>
+</code>
+                                                        </td>
+                                                </tr>
+                                                <tr>
+                                                        <td>settings</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/SettingsService.html" target="_self" >SettingsService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                        <td>
+                                                                <code><p>The difficulty module details.</p>
+</code>
+                                                        </td>
+                                                </tr>
+                                                <tr>
+                                                        <td>logger</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/LoggerService.html" target="_self" >LoggerService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                        <td>
+                                                                <code><p>LoggerService details.</p>
+</code>
+                                                        </td>
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+</section>
+
+    <section>
+    <h3 id="inputs">Inputs</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="newGame"></a>
+                        <b>newGame</b>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-2" colspan="2">
+                                    <div class="io-line">Defined in <a href="" data-line="231" class="link-to-prism">src/app/grid/grid.component.ts:231</a></div>
+                            </td>
+                        </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description"><p>An input for starting a new game based on when the user first selects a tile on the game grid.</p>
+</div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+</section>
+    <section>
+    <h3 id="outputs">Outputs</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="gameOverTriggered"></a>
+                        <b>gameOverTriggered</b>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://angular.io/api/core/EventEmitter" target="_blank" >EventEmitter</a></code>
+
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-2" colspan="2">
+                                    <div class="io-line">Defined in <a href="" data-line="108" class="link-to-prism">src/app/grid/grid.component.ts:108</a></div>
+                            </td>
+                        </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description"><p>A state variable to determine if the game over has been triggered or ont yet.</p>
+</div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="newGameRenderFinished"></a>
+                        <b>newGameRenderFinished</b>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://angular.io/api/core/EventEmitter" target="_blank" >EventEmitter</a></code>
+
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-2" colspan="2">
+                                    <div class="io-line">Defined in <a href="" data-line="98" class="link-to-prism">src/app/grid/grid.component.ts:98</a></div>
+                            </td>
+                        </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description"><p>A state variable to hold if a new game grid has been generated.</p>
+</div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+</section>
+    <section>
+    <h3>HostBindings</h3>        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="style.height"></a>
+                        <span class="name">
+                            <b>
+                            style.height</b>
+                            <a href="#style.height"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="146" class="link-to-prism">src/app/grid/grid.component.ts:146</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description"><p>A function to get the height of the game grid in pixels.</p>
+</div>
+                    </td>
+                </tr>
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="style.width"></a>
+                        <span class="name">
+                            <b>
+                            style.width</b>
+                            <a href="#style.width"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="155" class="link-to-prism">src/app/grid/grid.component.ts:155</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description"><p>A function to get the width of the game grid in pixels.</p>
+</div>
+                    </td>
+                </tr>
+
+            </tbody>
+        </table>
+</section>
+
+
+    <section>
+    
+    <h3 id="methods">
+        Methods
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getSquareWithCoord"></a>
+                    <span class="name">
+                        <b>
+                            <span class="modifier">Private</span>
+                            getSquareWithCoord
+                        </b>
+                        <a href="#getSquareWithCoord"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>getSquareWithCoord(coord: <a href="../undefineds/Coord.html">Coord</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="164"
+                            class="link-to-prism">src/app/grid/grid.component.ts:164</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>A function to get the designated tile based on the coordinates on the game grid.</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                    <td>Description</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>coord</td>
+                                    <td>
+                                                <code><a href="../miscellaneous/typealiases.html#Coord" target="_self" >Coord</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                    <td>
+                                        <p>The specified coordinate that is being searched for.</p>
+
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="../classes/Square.html" target="_self" >Square | undefined</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        <p>The square&#39;s coordinate on the game grid.</p>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="ngOnInit"></a>
+                    <span class="name">
+                        <b>
+                            ngOnInit
+                        </b>
+                        <a href="#ngOnInit"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>ngOnInit()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="124"
+                            class="link-to-prism">src/app/grid/grid.component.ts:124</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>A function to initialize all of the data in the game grid for displaying to the screen.</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="onMouseDown"></a>
+                    <span class="name">
+                        <b>
+                            onMouseDown
+                        </b>
+                        <a href="#onMouseDown"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>onMouseDown(e: MouseEvent, square: <a href="../classes/Square.html">Square</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="179"
+                            class="link-to-prism">src/app/grid/grid.component.ts:179</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>A function to deal with the user selecting a tile, whether it be flagging or uncovering a tile.</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                    <td>Description</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>e</td>
+                                    <td>
+                                            <code>MouseEvent</code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                    <td>
+                                        <p>The event of the user selecting a tile.</p>
+
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>square</td>
+                                    <td>
+                                                <code><a href="../classes/Square.html" target="_self" >Square</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                    <td>
+                                        <p>The specified tile that the user has selected.</p>
+
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        <p>Nothing</p>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="startNewGame"></a>
+                    <span class="name">
+                        <b>
+                            startNewGame
+                        </b>
+                        <a href="#startNewGame"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>startNewGame()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="241"
+                            class="link-to-prism">src/app/grid/grid.component.ts:241</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>A function to start a new game and initialize the game grid for displaying to the screen.</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="unhide"></a>
+                    <span class="name">
+                        <b>
+                            unhide
+                        </b>
+                        <a href="#unhide"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>unhide(square: <a href="../classes/Square.html">Square</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="197"
+                            class="link-to-prism">src/app/grid/grid.component.ts:197</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>A function to deal with when the user uncovers a tile.</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                    <td>Description</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>square</td>
+                                    <td>
+                                                <code><a href="../classes/Square.html" target="_self" >Square</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                    <td>
+                                        <p>The specified tile that the user has selected.</p>
+
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        <p>Nothing, game is over</p>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+    <section>
+    
+        <h3 id="inputs">
+            Properties
+        </h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="gameOver"></a>
+                        <span class="name">
+                            <b>
+                            gameOver</b>
+                            <a href="#gameOver"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>false</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="103" class="link-to-prism">src/app/grid/grid.component.ts:103</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description"><p>A state variable to determine if the game is over or not.</p>
+</div>
+                    </td>
+                </tr>
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="gridString"></a>
+                        <span class="name">
+                            <b>
+                            gridString</b>
+                            <a href="#gridString"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="88" class="link-to-prism">src/app/grid/grid.component.ts:88</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description"><p>A state variable to hold the current state of the game grid as a string.</p>
+</div>
+                    </td>
+                </tr>
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="squares"></a>
+                        <span class="name">
+                            <b>
+                            squares</b>
+                            <a href="#squares"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>        <code><a href="../classes/Square.html" target="_self" >Square[]</a></code>
+
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="93" class="link-to-prism">src/app/grid/grid.component.ts:93</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description"><p>A state variable to store the game grid.</p>
+</div>
+                    </td>
+                </tr>
+
+            </tbody>
+        </table>
+</section>
+
+    <section>
+    <h3 id="accessors">
+        Accessors
+    </h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="newGame"></a>
+                        <span class="name"><b>newGame</b><a href="#newGame"><span class="icon ion-ios-link"></span></a></span>
+                    </td>
+                </tr>
+
+
+                <tr>
+                    <td class="col-md-4">
+                        <span class="accessor"><b>set</b><code>newGame(e: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank">boolean</a>)</code></span>
+                    </td>
+                </tr>
+                            <tr>
+                                <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="231" class="link-to-prism">src/app/grid/grid.component.ts:231</a></div>
+                                </td>
+                            </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-description"><p>An input for starting a new game based on when the user first selects a tile on the game grid.</p>
+</div>
+
+                                <div class="io-description">
+                                        <b>Parameters :</b>
+                                        <table class="params">
+                                            <thead>
+                                                <tr>
+                                                    <td>Name</td>
+                                                        <td>Type</td>
+                                                    <td>Optional</td>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                    <tr>
+                                                            <td>e</td>
+                                                    
+                                                            <td>
+                                                                            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+                                                            </td>
+                                                    
+                                                        <td>
+                                                                No
+                                                        </td>
+                                                        
+                                                    </tr>
+                                            </tbody>
+                                        </table>
+                                </div>
+                                <div>
+                                </div>
+                                <div class="io-description">
+                                    <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                                </div>
+                        </td>
+                    </tr>
+            </tbody>
+        </table>
+</section>
+</div>
+
+
+    <div class="tab-pane fade  tab-source-code" id="c-source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component, EventEmitter, HostBinding, Input, OnInit, Output } from &#x27;@angular/core&#x27;;
+import { GridService } from &#x27;../grid.service&#x27;;
+import { SettingsService } from &#x27;../settings.service&#x27;;
+import { Coord } from &#x27;../types/coord&#x27;;
+import { LoggerService } from &#x27;../logger.service&#x27;;
+
+/**
+ * The square class that contains the display properties for the game grid module.
+ */
+class Square {
+  /**
+   * A state variable containing the designated coordinate to modify or view.
+   */
+  coord: Coord;
+
+  /**
+   * A state variable containing the number on the tile (-1 if it is a mine).
+   */
+  val: number;
+
+  /**
+   * A state variable to determine if a tile has been selected or not.
+   */
+  hidden: boolean;
+
+  /**
+   * A state variable to determine if a tile is flagged or not.
+   */
+  flagged: boolean;
+
+  /**
+   * @ignore
+   */
+  html: string;
+
+  /**
+   * Initializes the tile that has been selected by the user.
+   * @param row The row that the selected tile is located in.
+   * @param col The column that the selected tile is located in.
+   * @param val The value that is on the selected tile (-1 if it is a mine).
+   */
+  constructor(row: number, col: number, val: number) {
+    this.coord &#x3D; {row: row, col: col};
+    this.val &#x3D; val;
+    this.hidden &#x3D; true;
+    this.flagged &#x3D; false;
+    this.html &#x3D; &quot;&quot;;
+  }
+
+  /**
+   * A function to unhide the tile that the user has selected.
+   */
+  unhide() {
+    this.hidden &#x3D; false;
+    this.flagged &#x3D; false;
+    if (this.val !&#x3D;&#x3D; 0) {
+      this.html &#x3D; this.val.toString();
+    }
+  }
+
+  /**
+   * A function to toggle the flag when the player right clicks a tile to either flag or unflag the file.
+   */
+  toggleFlag() {
+    if (this.hidden) {
+      this.flagged &#x3D; !this.flagged;
+    }
+  }
+}
+
+/**
+ * The Component for displaying the game grid module logic to the screen.
+ */
+@Component({
+  selector: &#x27;app-grid&#x27;,
+  templateUrl: &#x27;./grid.component.html&#x27;,
+  styleUrls: [&#x27;./grid.component.css&#x27;]
+})
+
+
+/**
+ * The game grid module class for displaying the outputs to the screen.
+ */
+export class GridComponent implements OnInit {
+  /**
+   * A state variable to hold the current state of the game grid as a string.
+   */
+  gridString: string;
+
+  /**
+   * A state variable to store the game grid.
+   */
+  squares: Square[];
+
+  /**
+   * A state variable to hold if a new game grid has been generated.
+   */
+  @Output() newGameRenderFinished &#x3D; new EventEmitter&lt;boolean&gt;();
+
+  /**
+   * A state variable to determine if the game is over or not.
+   */
+  gameOver &#x3D; false;
+
+  /**
+   * A state variable to determine if the game over has been triggered or ont yet.
+   */
+  @Output() gameOverTriggered &#x3D; new EventEmitter&lt;boolean&gt;();
+
+  /**
+   * Initializes the grid string to an empty string and the squares of the game grid to an empty array.
+   * @param grid The game grid module details.
+   * @param settings The difficulty module details.
+   * @param logger LoggerService details.
+   */
+  constructor(private grid: GridService, private settings: SettingsService, private logger: LoggerService) {
+    this.gridString &#x3D; &quot;&quot;;
+    this.squares &#x3D; [];
+  }
+
+  /**
+   * A function to initialize all of the data in the game grid for displaying to the screen.
+   */
+  ngOnInit(): void {
+    this.gridString &#x3D; &quot;[&quot;;
+    for (let row of this.grid.grid) {
+      this.gridString +&#x3D; &quot;[&quot;;
+      this.gridString +&#x3D; row.join(&quot;,&quot;);
+      this.gridString +&#x3D; &quot;]&quot;
+    }
+    this.gridString +&#x3D; &quot;]&quot;;
+
+    for (let row &#x3D; 0; row &lt; this.grid.height; row++) {
+      for (let col &#x3D; 0; col &lt; this.grid.width; col++) {
+        let square &#x3D; new Square(row, col, this.grid.getValue(row, col));
+        this.squares.push(square);
+      }
+    }
+  }
+
+  /**
+   * A function to get the height of the game grid in pixels.
+   * @returns the height of the game grid.
+   */
+  @HostBinding(&#x27;style.height&#x27;)
+  get height(): string {
+    return (20 * this.settings.numRows) + &#x27;px&#x27;;
+  }
+
+  /**
+   * A function to get the width of the game grid in pixels.
+   * @returns the width of the game grid.
+   */
+  @HostBinding(&#x27;style.width&#x27;)
+  get width(): string {
+    return (20 * this.settings.numCols) + &#x27;px&#x27;;
+  }
+
+  /**
+   * A function to get the designated tile based on the coordinates on the game grid.
+   * @param coord The specified coordinate that is being searched for.
+   * @returns The square&#x27;s coordinate on the game grid.
+   */
+  private getSquareWithCoord(coord: Coord): Square | undefined {
+    for (let square of this.squares) {
+      if (square.coord.row &#x3D;&#x3D;&#x3D; coord.row &amp;&amp; square.coord.col &#x3D;&#x3D;&#x3D; coord.col) {
+        return square
+      }
+    }
+    return undefined;
+  }
+
+  /**
+   * A function to deal with the user selecting a tile, whether it be flagging or uncovering a tile.
+   * @param e The event of the user selecting a tile.
+   * @param square The specified tile that the user has selected.
+   * @returns Nothing
+   */
+  onMouseDown(e: MouseEvent, square: Square) {
+    e.preventDefault();
+    let isLeftClick: boolean &#x3D; e.button &#x3D;&#x3D;&#x3D; 0;
+    let isRightClick: boolean &#x3D; e.button &#x3D;&#x3D;&#x3D; 2;
+    if (isLeftClick) {
+      this.unhide(square);
+      return;
+    }
+    if (isRightClick) {
+      square.toggleFlag();
+    }
+  }
+
+  /**
+   * A function to deal with when the user uncovers a tile.
+   * @param square The specified tile that the user has selected.
+   * @returns Nothing, game is over
+   */
+  unhide(square: Square) {
+    if (this.gameOver) {
+      return;
+    }
+    if (square.val &#x3D;&#x3D;&#x3D; 0) {
+      let zeroGroup: Coord[] &#x3D; this.grid.getZeroGroup(square.coord);
+      for (let coord of zeroGroup) {
+        this.getSquareWithCoord(coord)?.unhide();
+      }
+    } else {
+      square.unhide();
+      if (square.val &#x3D;&#x3D;&#x3D; -1) {
+        this.gameOver &#x3D; true;
+        this.gameOverTriggered.emit(true);
+        for (let sq of this.squares) {
+          if (sq.val &#x3D;&#x3D;&#x3D; -1) {
+            sq.unhide();
+          }
+        }
+      }
+    }
+  }
+
+  /**
+   * @ignore
+   */
+  onContextMenu() {
+    return false;
+  }
+
+  /**
+   * An input for starting a new game based on when the user first selects a tile on the game grid.
+   */
+  @Input()
+  set newGame(e: boolean) {
+    if (e) {
+      this.startNewGame();
+      this.newGameRenderFinished.emit(true);
+    }
+  }
+
+  /**
+   * A function to start a new game and initialize the game grid for displaying to the screen.
+   */
+  startNewGame() {
+    this.gameOver &#x3D; false;
+    this.grid.resetGrid();
+    this.squares &#x3D; [];
+    for (let row &#x3D; 0; row &lt; this.grid.height; row++) {
+      for (let col &#x3D; 0; col &lt; this.grid.width; col++) {
+        let square &#x3D; new Square(row, col, this.grid.getValue(row, col));
+        this.squares.push(square);
+      }
+    }
+  }
+}
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-templateData">
+        <pre class="line-numbers"><code class="language-html">&lt;div *ngFor&#x3D;&quot;let square of squares&quot; class&#x3D;&quot;square&quot;
+    [ngClass]&#x3D;&quot;square.hidden ? (square.flagged ? &#x27;hidden flagged&#x27; : &#x27;hidden&#x27;) : (gameOver ? (square.val &#x3D;&#x3D;&#x3D; -1 ? &#x27;unhidden bomb-uncovered&#x27; : &#x27;unhidden&#x27;) : &#x27;unhidden&#x27;)&quot;
+    (mousedown)&#x3D;&quot;onMouseDown($event, square)&quot; (contextmenu)&#x3D;&quot;onContextMenu()&quot; [innerHTML]&#x3D;&quot;square.html&quot;&gt;&lt;/div&gt;</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-styleData">
+                <p class="comment">
+                    <code>./grid.component.css</code>
+                </p>
+                <pre class="line-numbers"><code class="language-scss">:host {
+    background-color: red;
+    display: flex;
+    flex-wrap: wrap;
+    border-width: 2px;
+    border-style: solid;
+    border-color: #808080 #f5f5f5 #f5f5f5 #808080;
+}
+
+.square {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 16px;
+    width: 16px;
+    background-color: #c0c0c0;
+    border-width: 2px;
+    border-style: solid;
+    font-size: small;
+    font-weight: bold;
+    cursor: default;
+    user-select: none;
+}
+
+.hidden {
+    border-color: #f5f5f5 #808080 #808080 #f5f5f5;
+}
+
+.unhidden {
+    border-color: #808080;
+}
+
+.flagged {
+    background-color: rgb(250, 91, 91);
+    border-color: rgb(255, 164, 164) #8f3232 #8f3232 rgb(255, 164, 164);
+}
+
+.bomb-uncovered {
+    background-color: rgb(250, 91, 91);
+    border-color: #8f3232 rgb(250, 91, 91) rgb(250, 91, 91) #8f3232;
+    background-image: url(../../assets/mine.png);
+}</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-tree">
+        <div id="tree-container"></div>
+        <div class="tree-legend">
+            <div class="title">
+                <b>Legend</b>
+            </div>
+            <div>
+                <div class="color htmlelement"></div><span>Html element</span>
+            </div>
+            <div>
+                <div class="color component"></div><span>Component</span>
+            </div>
+            <div>
+                <div class="color directive"></div><span>Html element with directive</span>
+            </div>
+        </div>
+    </div>
+
+    
+</div>
+
+<script src="../js/libs/vis.min.js"></script>
+<script src="../js/libs/htmlparser.js"></script>
+<script src="../js/libs/deep-iterator.js"></script>
+<script>
+        var COMPONENT_TEMPLATE = '<div><div *ngFor="let square of squares" class="square"    [ngClass]="square.hidden ? (square.flagged ? \'hidden flagged\' : \'hidden\') : (gameOver ? (square.val === -1 ? \'unhidden bomb-uncovered\' : \'unhidden\') : \'unhidden\')"    (mousedown)="onMouseDown($event, square)" (contextmenu)="onContextMenu()" [innerHTML]="square.html"></div></div>'
+    var COMPONENTS = [{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'GridComponent', 'selector': 'app-grid'},{'name': 'SettingsComponent', 'selector': 'app-settings'},{'name': 'TimerComponent', 'selector': 'app-timer'}];
+    var DIRECTIVES = [];
+    var ACTUAL_COMPONENT = {'name': 'GridComponent'};
+</script>
+<script src="../js/tree.js"></script>
+
+
+
+
+
+
+
+
+
+
+                   
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> result-matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'component';
+            var COMPODOC_CURRENT_PAGE_URL = 'GridComponent.html';
+            var MAX_SEARCH_RESULTS = 15;
+       </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+       <!-- Required to polyfill modern browsers as code is ES5 for IE... -->
+       <script src="../js/libs/custom-elements-es5-adapter.js" charset="utf-8" defer></script>
+       <script src="../js/menu-wc.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+       <script src="../js/libs/zepto.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>

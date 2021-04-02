@@ -1,0 +1,5 @@
+<select (change)="onChange($event)">
+    <option *ngFor="let difficultyLabel of difficultyLabels">{{difficultyLabel}}</option>
+</select>
+
+<button (click)="onSubmit($event)">New Game</button>
