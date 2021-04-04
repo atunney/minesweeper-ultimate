@@ -18,7 +18,7 @@ import { TimerComponent } from './timer/timer.component';
     BrowserModule,
     AppRoutingModule
   ],
-  providers: [],
+  providers: [GridComponent],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

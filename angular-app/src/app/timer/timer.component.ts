@@ -1,4 +1,5 @@
 import { Component, Input, OnInit, SimpleChanges } from '@angular/core';
+import { GridComponent } from '../grid/grid.component';
 import { LoggerService } from '../logger.service';
 
 /**
@@ -32,11 +33,18 @@ export class TimerComponent implements OnInit {
 
   @Input() gameWin = false;
 
+  @Input() totalMines = "0";
+
+
   /**
    * @ignore
    */
-  constructor(private logger: LoggerService) { }
+  constructor(private logger: LoggerService, private gridComp: GridComponent) { 
+    this.totalMines = "0" + GridComponent.totalMines.toString();
 
+  }
+
+  
   /**
    * Initializes the timer component for when the application starts.
    */
@@ -68,9 +76,7 @@ export class TimerComponent implements OnInit {
     if (!this.timerLockFree) {
       return;
     }
-
     this.timerLockFree = false;
-
     let timeAsNum = parseInt(this.time);
     timeAsNum++;
     let timeAsString = timeAsNum.toString();
@@ -83,13 +89,18 @@ export class TimerComponent implements OnInit {
     else if (timeAsString.length === 3) {
       this.time = timeAsString;
     }
-    else {
-      this.time = "000";
+    else if (this.time = "999") {
+      this.time = "999";
     }
     setTimeout(() => {
       this.timerLockFree = true;
       this.incrementTimer();
     }, 1000);
+    if (GridComponent.totalMines < 10 && GridComponent.totalMines > -10)
+      this.totalMines = "00" + GridComponent.totalMines.toString();
+    else
+      this.totalMines = "0" + GridComponent.totalMines.toString();
+    this.logger.log(GridComponent.totalMines);
   }
 
   /**
@@ -98,5 +109,6 @@ export class TimerComponent implements OnInit {
   @Input()
   set resetTimer(e: boolean) {
     this.time = "000";
+    this.totalMines = "0" + GridComponent.totalMines.toString();
   }
 }

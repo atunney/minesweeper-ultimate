@@ -1,1 +1,5 @@
-<span [innerHTML]="time" [ngClass]="paused ? 'paused' : 'unpaused'" [ngClass]="gameWin ? 'win' : 'unpaused'"></span>
+<div>
+    <span class="timer" [innerHTML]="time" [ngClass]="paused ? 'paused' : 'unpaused'" [ngClass]="gameWin ? 'win' : 'unpaused'" ></span>
+    <span [ngClass] = "gameWin ? 'displayWin' : 'displaySmile'" [ngClass] = "paused ? (gameWin ? 'displayWin' : 'displayLose') : 'displaySmile'">''''''</span>
+    <span class="mines" [innerHTML]="totalMines" [ngStyle]="{'margin-left': '120px'}"></span>
+</div>

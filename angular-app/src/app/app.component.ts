@@ -40,6 +40,8 @@ export class AppComponent {
 
   gameWin = false;
 
+  gamePaused = false;
+
   /**
    * @ignore
    */
@@ -87,6 +89,7 @@ export class AppComponent {
 
   onKeyDown(e: KeyboardEvent) {
     if (e.key === "p" && !this.gameOver) {
+      this.gamePaused = !this.gamePaused;
       this.gameStopped = !this.gameStopped;
     }
   }

@@ -28,6 +28,7 @@ class Square {
    */
   flagged: boolean;
 
+
   /**
    * @ignore
    */
@@ -109,6 +110,14 @@ export class GridComponent implements OnInit {
 
   numOfTiles: number;
 
+  flaggedSquare: boolean;
+
+  flaggedSquares: Coord[];
+
+  static initializedGame: boolean;
+
+  @Input() gamePaused = false;
+
   /**
    * A state variable to determine if the game over has been triggered or ont yet.
    */
@@ -118,6 +127,7 @@ export class GridComponent implements OnInit {
   gameWin = false;
 
   @Output() gameWinTriggered = new EventEmitter<boolean>();
+  static totalMines: number;
 
   /**
    * Initializes the grid string to an empty string and the squares of the game grid to an empty array.
@@ -130,6 +140,10 @@ export class GridComponent implements OnInit {
     this.correctFlags = 0;
     this.numOfMines = settings.numMines;
     this.numOfTiles = settings.numRows * settings.numCols;
+    this.flaggedSquare = false;
+    this.flaggedSquares = [];
+    GridComponent.initializedGame = false;
+    GridComponent.totalMines = settings.numMines;
   }
 
   /**
@@ -142,6 +156,7 @@ export class GridComponent implements OnInit {
         this.squares.push(square);
       }
     }
+    GridComponent.totalMines = this.settings.numMines;
   }
 
   /**
@@ -183,38 +198,43 @@ export class GridComponent implements OnInit {
    * @returns Nothing
    */
   onMouseDown(e: MouseEvent, square: Square) {
+    GridComponent.initializedGame = true;
     e.preventDefault();
     let isLeftClick: boolean = e.button === 0;
     let isRightClick: boolean = e.button === 2;
-    if (this.gameOver || this.gameWin) {
+    if (this.gameOver || this.gameWin || this.gamePaused) {
       return;
     }
     else if (isLeftClick) {
-      if (square.flagged)
+      if (square.flagged) {
+        this.flaggedSquare = true;
         return;
-
-      let anyTilesRevealed = false;
-      for (let s of this.squares) { //check for any revealed tiles
-        if (!s.hidden) {
-          anyTilesRevealed = true;
-          break;
-        }
       }
-      if (!anyTilesRevealed) {
-        for (let i = 0; i < 50; i++) { //try to regenerate so your first click is a 0 tile
-          if (square.val === 0) {
+      
+      if (!this.flaggedSquare) {
+        let anyTilesRevealed = false;
+        for (let s of this.squares) { //check for any revealed tiles
+          if (!s.hidden) {
+            anyTilesRevealed = true;
             break;
           }
-          this.regenerateGrid();
-          square = this.getSquareWithCoord(square.coord)!;
         }
-        for (let i = 0; i < 50; i++) { //try to regenerate so your first click just isn't a mine
-          if (square.val === -1) {
+        if (!anyTilesRevealed) {
+          for (let i = 0; i < 50; i++) { //try to regenerate so your first click is a 0 tile
+            if (square.val === 0) {
+              break;
+            }
             this.regenerateGrid();
             square = this.getSquareWithCoord(square.coord)!;
           }
-          else {
-            break;
+          for (let i = 0; i < 50; i++) { //try to regenerate so your first click just isn't a mine
+            if (square.val === -1) {
+              this.regenerateGrid();
+              square = this.getSquareWithCoord(square.coord)!;
+            }
+            else {
+              break;
+            }
           }
         }
       }
@@ -223,6 +243,23 @@ export class GridComponent implements OnInit {
     }
     else if (isRightClick) {
       square.toggleFlag();
+      if (square.flagged) {
+        this.flaggedSquare = true;
+      }
+      else {
+        this.flaggedSquare = false;
+      }
+      if (this.flaggedSquares.indexOf(square.coord) === -1 && square.hidden === true) {
+        this.flaggedSquares.push(square.coord);
+        GridComponent.totalMines--;
+      }
+      else {
+        if (square.hidden === true) {
+          this.flaggedSquares.splice(this.flaggedSquares.indexOf(square.coord), 1);
+          this.logger.log("Unflagged and removed from array");
+          GridComponent.totalMines++;
+        }
+      }
       if (square.val == -1) {
         if (!square.flagged) {
           this.correctFlags--;
@@ -247,33 +284,39 @@ export class GridComponent implements OnInit {
    */
   unhide(square: Square) {
     if (square.val === 0) {
-      let zeroGroup: Coord[] = this.grid.getZeroGroup(square.coord);
-      for (let coord of zeroGroup) {
-        this.numOfTiles--;
-        this.logger.log(this.numOfTiles);
-        this.getSquareWithCoord(coord)?.unhide();
-      }
-      if (this.numOfTiles === this.numOfMines) {
-        this.gameWin = true;
-        this.gameWinTriggered.emit(true);
-      }
-    } else {
-      square.unhide();
-      if (square.val === -1) {
-        this.gameOver = true;
-        this.gameOverTriggered.emit(true);
-        for (let sq of this.squares) {
-          if (sq.val === -1) {
-            sq.unhide();
+      if (square.hidden === true) {
+        let zeroGroup: Coord[] = this.grid.getZeroGroup(square.coord);
+        for (let coord of zeroGroup) {
+          if (this.getSquareWithCoord(coord)?.hidden && !this.getSquareWithCoord(coord)?.flagged) {
+            this.numOfTiles--;
+            this.logger.log(this.numOfTiles);
+            this.getSquareWithCoord(coord)?.unhide();
           }
         }
-      }
-      else {
-        this.numOfTiles--;
-        this.logger.log(this.numOfTiles);
         if (this.numOfTiles === this.numOfMines) {
           this.gameWin = true;
           this.gameWinTriggered.emit(true);
+        }
+      }
+    } else {
+      if (square.hidden === true) {
+        square.unhide();
+        if (square.val === -1) {
+          this.gameOver = true;
+          this.gameOverTriggered.emit(true);
+          for (let sq of this.squares) {
+            if (sq.val === -1) {
+              sq.unhide();
+            }
+          }
+        }
+        else {
+          this.numOfTiles--;
+          this.logger.log(this.numOfTiles);
+          if (this.numOfTiles === this.numOfMines) {
+            this.gameWin = true;
+            this.gameWinTriggered.emit(true);
+          }
         }
       }
     }
@@ -297,8 +340,13 @@ export class GridComponent implements OnInit {
       this.numOfTiles = this.settings.numRows * this.settings.numCols;
       this.correctFlags = 0;
       this.numOfMines = this.settings.numMines;
+      this.flaggedSquare = false;
+      this.flaggedSquares = [];
+      GridComponent.totalMines = this.settings.numMines;
+      GridComponent.initializedGame = false;
     }
   }
+
 
   /**
    * A function to start a new game and initialize the game grid for displaying to the screen.

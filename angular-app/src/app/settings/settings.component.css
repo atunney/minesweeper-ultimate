@@ -1,4 +1,5 @@
 button {
-    display: block;
+    display: inline;
     margin-top: 20px;
+    margin-left: 5px;
 }

@@ -1,4 +1,10 @@
-<app-timer style="margin-right: 30px;" [resetTimer]="newGameTriggered" [paused]="gameStopped" [gameWin]="gameWin"></app-timer>
-<app-grid [newGame]="newGameTriggered" (newGameRenderFinished)="onNewGameRender($event)"
-    (gameOverTriggered)="onGameOverTriggered($event)"(gameWinTriggered) = "onGameWinTriggered($event)"></app-grid>
-<app-settings style="margin-left: 30px;" (newGame)="startNewGame($event)"></app-settings>
+<div>
+    <h1>Minesweeper Ultimate</h1>
+    <p>How to play:</p>
+    <app-settings style="margin-left: 30px;" (newGame)="startNewGame($event)"></app-settings>
+    <br><br>
+    <app-timer style="margin-right: 30px;" [resetTimer]="newGameTriggered" [paused]="gameStopped" [gameWin]="gameWin"></app-timer>
+    <app-grid [newGame]="newGameTriggered" (newGameRenderFinished)="onNewGameRender($event)"
+        (gameOverTriggered)="onGameOverTriggered($event)"(gameWinTriggered) = "onGameWinTriggered($event)" [gamePaused]="gamePaused"></app-grid>
+
+</div>
