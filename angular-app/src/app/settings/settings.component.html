@@ -1,6 +1,4 @@
-<div>
-<select (change)="onChange($event)">
+<select [ngStyle]="{'margin-left': '5px'}" (change)="onChange($event)">
     <option *ngFor="let difficultyLabel of difficultyLabels">{{difficultyLabel}}</option>
 </select>
 <button (click)="onSubmit($event)">New Game</button>
-</div>

@@ -1,17 +1,19 @@
-div {
+.main {
     background-color: #c0c0c0;
     width: 70%;
-    border: 2px;
+    border: 3px;
     border-style: outset;
+    padding-left: 25px;
+    margin-left: 25px;
 }
 
 .timer {
-    margin-left: 10px;
     font-size: larger;
     font-family: monospace;
     font-weight: bolder;
     border: 2px solid #c0c0c0;
     border-style: outset;
+    margin-left: -15px;
 }
 
 .paused {
@@ -34,6 +36,7 @@ div {
     font-size: larger;
     font-family: monospace;
     font-weight: bolder;
+    margin-right: 10px;
 }
 
 .inProgress {
@@ -55,7 +58,6 @@ div {
     position: absolute;
     background-image: url(../../assets/win.png);
     padding-left: 100px;
-    /*text-align: center;*/
     color: transparent;
     background-repeat: no-repeat;
     background-position-x: center;
@@ -72,7 +74,6 @@ div {
     background-repeat: no-repeat;
     background-position-x: center;
     color:transparent;
-    /*text-align:justify;*/
 }
 
 .displayLose {
@@ -83,7 +84,6 @@ div {
     position: absolute;
     background-image: url(../../assets/dead.png);
     padding-left: 100px;
-    /*text-align: center;*/
     color: transparent;
     background-repeat: no-repeat;
     background-position-x: center;

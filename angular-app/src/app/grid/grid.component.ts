@@ -240,6 +240,30 @@ export class GridComponent implements OnInit {
       }
 
       this.unhide(square);
+
+      if (!this.gameOver)
+      {
+        let winByOnlyMinesHidden = true;
+        //scan board for all tiles
+        for (let row = 0; row < this.grid.height; row++) {
+          for (let col = 0; col < this.grid.width; col++) {
+            let s = this.getSquareWithCoord({row, col})!;
+            if (s.val === -1) {
+
+            }
+            else { //not a bomb
+              if (s.hidden || s.flagged) { //is hidden
+                winByOnlyMinesHidden = false;
+                break;
+              }
+            }
+          }
+        }
+        if (winByOnlyMinesHidden) {
+          this.gameWin = true;
+          this.gameWinTriggered.emit(true);
+        }
+      }
     }
     else if (isRightClick) {
       square.toggleFlag();
@@ -268,10 +292,10 @@ export class GridComponent implements OnInit {
         else {
           this.correctFlags++;
           this.logger.log(this.correctFlags + " " + this.settings.numMines);
-          if (this.correctFlags == this.numOfMines) {
+          /*if (this.correctFlags == this.numOfMines) {
             this.gameWin = true;
             this.gameWinTriggered.emit(true);
-          }
+          }*/
         }
       }
     }
@@ -293,10 +317,10 @@ export class GridComponent implements OnInit {
             this.getSquareWithCoord(coord)?.unhide();
           }
         }
-        if (this.numOfTiles === this.numOfMines) {
+        /*if (this.numOfTiles === this.numOfMines) {
           this.gameWin = true;
           this.gameWinTriggered.emit(true);
-        }
+        }*/
       }
     } else {
       if (square.hidden === true) {
@@ -313,10 +337,10 @@ export class GridComponent implements OnInit {
         else {
           this.numOfTiles--;
           this.logger.log(this.numOfTiles);
-          if (this.numOfTiles === this.numOfMines) {
+          /*if (this.numOfTiles === this.numOfMines) {
             this.gameWin = true;
             this.gameWinTriggered.emit(true);
-          }
+          }*/
         }
       }
     }

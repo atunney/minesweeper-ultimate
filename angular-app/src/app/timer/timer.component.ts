@@ -78,7 +78,8 @@ export class TimerComponent implements OnInit {
     }
     this.timerLockFree = false;
     let timeAsNum = parseInt(this.time);
-    timeAsNum++;
+    if (GridComponent.initializedGame)
+      timeAsNum++;
     let timeAsString = timeAsNum.toString();
     if (timeAsString.length === 1) {
       this.time = "00" + timeAsString;

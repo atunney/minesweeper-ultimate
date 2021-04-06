@@ -5,6 +5,7 @@
     border-width: 2px;
     border-style: outset;
     border-color: #808080 #f5f5f5 #f5f5f5 #808080;
+    margin-left: 25px;
 }
 
 .square:hover {
